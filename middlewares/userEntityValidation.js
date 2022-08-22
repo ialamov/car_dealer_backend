@@ -32,7 +32,7 @@ const updateVerification = async (carCreated) => {
   }
 };
 
-const reqCarInformation = (userInformation) => {
+const reqUserInformation = (userInformation) => {
   const {
     user_name,
     full_name,
@@ -77,6 +77,6 @@ const reqCarInformation = (userInformation) => {
 }
 
 module.exports = {
-  reqCarInformation,
+  reqUserInformation,
   updateVerification,
 }

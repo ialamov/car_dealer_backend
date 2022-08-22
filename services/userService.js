@@ -1,9 +1,10 @@
 const userModel = require('../models/userModel');
 
-// const getById = async (id) => {
-//   const getCarById = await carSalesModel.getById(id);
-//   return getCarById;
-// }
+const getById = async (id) => {
+  const getUserById = await userModel.getById(id);
+  return getUserById;
+}
+
 const create = async (user) => {
   if (!user) {
     throw new Error({ code: 401, message: 'The fields must be fullfield.'});
@@ -24,7 +25,7 @@ const create = async (user) => {
 
 module.exports = {
   create,
-  // getById,
+  getById,
   // updateOneCar,
   // deleteCar,
 }
