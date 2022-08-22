@@ -5,6 +5,6 @@ route
   .post('/', carSalesController.create)
   .get('/:id', carSalesController.getById)
   .patch('/:id', carSalesController.updateOneCar)
-  // .delete('/:id')
+  .delete('/:id', carSalesController.deleteCar);
 
 module.exports = { route };

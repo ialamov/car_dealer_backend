@@ -1,5 +1,3 @@
-const { json } = require("body-parser");
-
 const carInformationValidation = (req, res, next) => {
   const { 
     category, 
@@ -37,6 +35,7 @@ const reqCarInformation = (carInformation) => {
   } = carInformation;
 
   const car = {
+    user,
     category, 
     brand, 
     model, 

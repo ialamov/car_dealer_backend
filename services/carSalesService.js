@@ -15,6 +15,11 @@ const updateOneCar = async ({car, id}) => {
   return carCreated;
 }
 
+const deleteCar = async (id) => {
+  const carDeleted = await carSalesModel.deleteCar(id);
+  return carDeleted;
+}
+
 module.exports = {
   create,
   getById,

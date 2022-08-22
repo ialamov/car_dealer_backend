@@ -33,8 +33,19 @@ const updateOneCar = async (req, res) => {
   }
 }
 
+const deleteCar = async (req, res) => {
+  const { id } = req.params;
+  try {
+    const carDeleted = await carSalesService.deleteCar(id);
+    return res.status(201).json({ message: `Car ${carDeleted} deleted`});
+  } catch (error) {
+    return res.status(422).json({ message: 'You must delete an active car' });
+  }
+}
+
 module.exports = { 
   create,
   getById,
   updateOneCar,
+  deleteCar,
 }
