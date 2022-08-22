@@ -6,5 +6,7 @@ route
   .post('/', userEntityValidation.userInformationValidation, userController.create)
   .get('/', userController.getAll)
   .get('/:id', userController.getById)
+  .patch('/:id', userController.updateOneUser)
+  .delete('/:id',userController.deleteUser);
 
 module.exports = { route };

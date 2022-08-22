@@ -36,7 +36,7 @@ const updateOneCar = async (req, res) => {
   try {
     const carCreated = await carSalesService.create(carInformation);
     carSalesEntityValidation.updateVerification(carCreated);
-    return res.status(201).json({ message: `Created with success the new sale: ${carCreated}`});
+    return res.status(201).json({ message: `The information was update with success. ${carCreated}`});
   } catch (error) {
     return res.status(422).json({ message: 'At least one fild must be changed'});
   }

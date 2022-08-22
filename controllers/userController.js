@@ -16,7 +16,7 @@ const getById = async (req, res) => {
     const getUserById = await userService.getById(id);
     return res.status(200).json(getUserById);
   } catch (error) {
-    return res.status(422).json({ message: 'This car was not found.'});
+    return res.status(422).json({ message: 'This user was not found.'});
   }
 };
 
@@ -31,31 +31,31 @@ const create = async (req, res) => {
   }
 }
 
-// const updateOneCar = async (req, res) => {
-//   const userInformation = userEntityValidation.reqUserInformation(req.body);
-//   try {
-//     const carCreated = await carService.create(carInformation);
-//     carEntityValidation.updateVerification(carCreated);
-//     return res.status(201).json({ message: `Created with success the new sale: ${carCreated}`});
-//   } catch (error) {
-//     return res.status(422).json({ message: 'At least one fild must be changed'});
-//   }
-// }
+const updateOneUser = async (req, res) => {
+  const userInformation = userEntityValidation.reqUserInformation(req.body);
+  try {
+    const userCreated = await userService.create(userInformation);
+    userEntityValidation.updateVerification(userCreated);
+    return res.status(201).json({ message: `Updated the user information to ${userCreated}`});
+  } catch (error) {
+    return res.status(422).json({ message: 'At least one fild must be changed'});
+  }
+}
 
-// const deleteCar = async (req, res) => {
-//   const { id } = req.params;
-//   try {
-//     const carDeleted = await carService.deleteCar(id);
-//     return res.status(201).json({ message: `Car ${carDeleted} deleted`});
-//   } catch (error) {
-//     return res.status(422).json({ message: 'You must delete an active car' });
-//   }
-// }
+const deleteUser = async (req, res) => {
+  const { id } = req.params;
+  try {
+    const userDeleted = await userService.deleteUser(id);
+    return res.status(201).json({ message: `All user information was deleted. ${userDeleted}`});
+  } catch (error) {
+    return res.status(422).json({ message: 'You must delete an active user' });
+  }
+}
 
 module.exports = { 
   create,
   getAll,
   getById,
-  // updateOneCar,
-  // deleteCar,
+  updateOneUser,
+  deleteUser,
 }
