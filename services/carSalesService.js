@@ -1,5 +1,9 @@
 const carSalesModel = require('../models/carSalesModel');
 
+const getAll = async () => {
+  const getAllCars = await carSalesModel.getAll();
+}
+
 const getById = async (id) => {
   const getCarById = await carSalesModel.getById(id);
   return getCarById;
@@ -24,6 +28,7 @@ const deleteCar = async (id) => {
 
 module.exports = {
   create,
+  getAll,
   getById,
   updateOneCar,
   deleteCar,

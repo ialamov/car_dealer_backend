@@ -1,6 +1,15 @@
 const carSalesService = require('../services/carSalesService');
 const carSalesEntityValidation = require('../middlewares/carSalesEntityValidation')
 
+const getAll = async (req, res) => {
+  try {
+    const getAllCars = await carSalesService.getAll();
+    return res.status(200).json(getAllCars);
+  } catch (error) {
+    return res.status(422).json({ message: 'The list is empty.'});
+  }
+}
+
 const getById = async (req, res) => {
   const { id } = req.params;
   try {
@@ -45,6 +54,7 @@ const deleteCar = async (req, res) => {
 
 module.exports = { 
   create,
+  getAll,
   getById,
   updateOneCar,
   deleteCar,

@@ -1,11 +1,15 @@
 const User = require("../database/userEntity");
 
+const getAll = async () => {
+  return await User.find();
+}
+
 const getById =  async (id) => {
-  return await Car.findOne({_id: id});
+  return await User.findOne({_id: id});
 }
 
 const create = async (car) => {
-  return await Car.create(car);
+  return await User.create(car);
 }
 
 // const updateOneCar = async ({car, id}) => {
@@ -18,6 +22,7 @@ const create = async (car) => {
 
 module.exports = { 
   create,
+  getAll,
   getById,
   // updateOneCar,
   // deleteCar,

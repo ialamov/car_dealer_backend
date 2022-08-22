@@ -77,6 +77,7 @@ const reqUserInformation = (userInformation) => {
 }
 
 module.exports = {
+  userInformationValidation,
   reqUserInformation,
   updateVerification,
 }

@@ -1,5 +1,10 @@
 const userModel = require('../models/userModel');
 
+const getAll = async () => {
+  const getAllUsers = await userModel.getAll();
+  return getAllUsers;
+}
+
 const getById = async (id) => {
   const getUserById = await userModel.getById(id);
   return getUserById;
@@ -25,6 +30,7 @@ const create = async (user) => {
 
 module.exports = {
   create,
+  getAll,
   getById,
   // updateOneCar,
   // deleteCar,

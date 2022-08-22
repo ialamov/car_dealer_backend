@@ -1,6 +1,15 @@
 const userService = require('../services/userService');
 const userEntityValidation = require('../middlewares/userEntityValidation');
 
+const getAll = async (_req, res) => {
+  try {
+    const getAllUsers = await userService.getAll();
+    return res.status(200).json(getAllUsers);
+  } catch (error) {
+    return res.status(422).json({ message: 'The list is empty.'});
+  }
+};
+
 const getById = async (req, res) => {
   const { id } = req.params;
   try {
@@ -45,7 +54,8 @@ const create = async (req, res) => {
 
 module.exports = { 
   create,
-  // getById,
+  getAll,
+  getById,
   // updateOneCar,
   // deleteCar,
 }

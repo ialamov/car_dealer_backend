@@ -9,7 +9,7 @@ const carInformationValidation = (req, res, next) => {
   } = req.body;
 
   if (!category || !brand || !model || !year_of_fabrication || !color || !price) {
-    res.status(422).json({ message: 'All fields must be fullfied' });
+    return res.status(422).json({ message: 'All fields must be fullfied' });
   }
 
   next();
@@ -52,6 +52,7 @@ const reqCarInformation = (carInformation) => {
 }
 
 module.exports = {
+  carInformationValidation,
   reqCarInformation,
   updateVerification,
 }

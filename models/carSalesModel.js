@@ -1,5 +1,9 @@
 const Car = require("../database/carEntity");
 
+const getAll = async () => {
+  return await Car.find();
+}
+
 const getById =  async (id) => {
   return await Car.findOne({_id: id});
 }
@@ -18,6 +22,7 @@ const deleteCar = async (id) => {
 
 module.exports = { 
   create,
+  getAll,
   getById,
   updateOneCar,
   deleteCar,
