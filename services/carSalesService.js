@@ -1,3 +1,5 @@
+const carSalesModel = require('../models/carSalesModel');
+
 const getById = async (id) => {
   const getCarById = await carSalesModel.getById(id);
   return getCarById;
@@ -24,4 +26,5 @@ module.exports = {
   create,
   getById,
   updateOneCar,
+  deleteCar,
 }

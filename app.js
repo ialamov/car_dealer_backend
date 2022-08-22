@@ -1,10 +1,13 @@
 const express = require('express');
 const carSalesRoute = require('./routes/carSalesRoute');
+const userRoute = require('./routes/userRoute');
 const app = express();
 // const carSalesRoute = require('./routes/carSales')
 
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
-app.use('/carSales', carSalesRoute.route);
+app.use('/carsales', carSalesRoute.route);
+app.use('/user', userRoute.route);
+// app.use('/login', loginRoute.route);
 
 module.exports = app;
