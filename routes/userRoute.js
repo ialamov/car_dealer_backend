@@ -3,7 +3,9 @@ const userController = require('../controllers/userController');
 const userEntityValidation = require('../middlewares/userEntityValidation')
 
 route
-  .post('/', userEntityValidation.userInformationValidation, userController.create)
+  .post('/', 
+    userEntityValidation.userInformationValidation, 
+    userController.create)
   .get('/', userController.getAll)
   .get('/:id', userController.getById)
   .patch('/:id', userController.updateOneUser)

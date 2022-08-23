@@ -1,4 +1,4 @@
-const User = require("../database/userEntity");
+const User = require("../models/userEntity");
 
 const getAll = async () => {
   return await User.find();

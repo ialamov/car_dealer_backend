@@ -1,4 +1,4 @@
-const carSalesModel = require('../models/carSalesModel');
+const carSalesModel = require('../dao/carSalesDao');
 
 const getAll = async () => {
   const getAllCars = await carSalesModel.getAll();

@@ -1,4 +1,4 @@
-const Car = require("../database/carEntity");
+const Car = require("../models/carEntity");
 
 const getAll = async () => {
   return await Car.find();

@@ -1,4 +1,4 @@
-const userModel = require('../models/userModel');
+const userModel = require('../dao/userDao');
 
 const getAll = async () => {
   const getAllUsers = await userModel.getAll();
