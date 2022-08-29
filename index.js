@@ -9,7 +9,7 @@ mongoose.connect(`mongodb+srv://${DB_USER}:${DB_PASSWORD}@clustercardealerapi.vq
   .then(
     app.listen(3000)
     )
-  .catch((error) => console.log(error));
+  .catch((error) => console.log('not connecting'));
 
 // URL: mongodb+srv://admin:pN_wjD6VrW*K266Mt_xTie-G@clustercardealerapi.vq7cs26.mongodb.net/cardatabase?retryWrites=true&w=majority
 //Password: pN_wjD6VrW*K266Mt_xTie-G

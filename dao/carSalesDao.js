@@ -1,4 +1,5 @@
 const Car = require("../models/carEntity");
+const mockApiCarBrands = require('../utils/mockApiCarBrands');
 
 const getAll = async () => {
   return await Car.find();
@@ -20,10 +21,15 @@ const deleteCar = async (id) => {
   return await Car.deleteOne({ _id: id});
 }
 
+const getCarBrands = () => {
+  return mockApiCarBrands;
+}
+
 module.exports = { 
   create,
   getAll,
   getById,
   updateOneCar,
   deleteCar,
+  getCarBrands,
 }

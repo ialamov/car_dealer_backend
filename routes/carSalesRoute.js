@@ -5,6 +5,7 @@ const carSalesEntityValidation = require('../middlewares/carSalesEntityValidatio
 route
   .post('/', carSalesEntityValidation.carInformationValidation, carSalesController.create)
   .get('/', carSalesController.getAll)
+  .get('/brands', carSalesController.getCarBrands)
   .get('/:id', carSalesController.getById)
   .patch('/:id', carSalesController.updateOneCar)
   .delete('/:id', carSalesController.deleteCar);

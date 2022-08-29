@@ -1,14 +1,13 @@
 const carInformationValidation = (req, res, next) => {
   const { 
-    category, 
     brand, 
     model,
-    year_of_fabrication,
+    fabrication_year,
     color,
     price,
   } = req.body;
 
-  if (!category || !brand || !model || !year_of_fabrication || !color || !price) {
+  if (!brand || !model || !fabrication_year || !color || !price) {
     return res.status(422).json({ message: 'All fields must be fullfied' });
   }
 
@@ -23,24 +22,18 @@ const updateVerification = async (carCreated) => {
 
 const reqCarInformation = (carInformation) => {
   const {
-    user, 
-    category, 
     brand, 
     model, 
-    name,
-    year_of_fabrication,
+    fabrication_year,
     color,
     price,
     sold,
   } = carInformation;
 
   const car = {
-    user,
-    category, 
     brand, 
-    model, 
-    name,
-    year_of_fabrication,
+    model,
+    fabrication_year,
     color,
     price,
     sold,

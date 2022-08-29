@@ -52,10 +52,20 @@ const deleteCar = async (req, res) => {
   }
 }
 
+const getCarBrands = async (req, res) => {
+  try {
+    const listCarBrands = await carSalesService.getCarBrands();
+    return res.status(200).json(listCarBrands);
+  } catch (error) {
+    return res.status(500).json({ message: 'There is a problem in the server. Try again later.' });
+  }
+}
+
 module.exports = { 
   create,
   getAll,
   getById,
   updateOneCar,
   deleteCar,
+  getCarBrands,
 }
