@@ -13,8 +13,8 @@ const create = async (car) => {
   return await Car.create(car);
 }
 
-const updateOneCar = async ({car, id}) => {
-  return await Car.updateOne({_id: id}, car);
+const updateOneCar = async (car, id) => {
+  return await Car.updateOne({ _id: id }, car );
 }
 
 const deleteCar = async (id) => {

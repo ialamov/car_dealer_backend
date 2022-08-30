@@ -13,21 +13,13 @@ const create = async (car) => {
   if (!car) {
     throw new Error({ code: 401, message: 'The fields must be fullfield.'});
   }
-  console.log(car)
-  const carObject = {
-    brand: car.brand,
-    model: car.model,
-    fabrication_year: car.fabricationYear,
-    color: car.color,
-    price: car.price,
-  }
   
-  const carCreated = await carSalesDao.create(carObject);
+  const carCreated = await carSalesDao.create(car);
   return carCreated;
 }
 
-const updateOneCar = async ({car, id}) => {
-  const carCreated = await carSalesDao.updateOneCar({car, id})
+const updateOneCar = async (car, id) => {
+  const carCreated = await carSalesDao.updateOneCar(car, id)
   return carCreated;
 }
 

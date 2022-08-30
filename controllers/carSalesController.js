@@ -32,9 +32,11 @@ const create = async (req, res) => {
 }
 
 const updateOneCar = async (req, res) => {
-  const carInformation = carSalesEntityValidation.reqCarInformation(req.body);
+  console.log(req)
+  const car = carSalesEntityValidation.reqCarInformation(req.body);
+  const { id } = req.params;
   try {
-    const carCreated = await carSalesService.create(carInformation);
+    const carCreated = await carSalesService.updateOneCar(car, id);
     carSalesEntityValidation.updateVerification(carCreated);
     return res.status(201).json({ message: `The information was update with success. ${carCreated}`});
   } catch (error) {

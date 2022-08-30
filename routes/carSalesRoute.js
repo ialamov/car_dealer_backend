@@ -7,7 +7,7 @@ route
   .get('/', carSalesController.getAll)
   .get('/brands', carSalesController.getCarBrands)
   .get('/:id', carSalesController.getById)
-  .patch('/:id', carSalesController.updateOneCar)
+  .put('/:id', carSalesController.updateOneCar)
   .delete('/:id', carSalesController.deleteCar);
 
 module.exports = { route };
